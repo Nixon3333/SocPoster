@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">UTPoster</string>
+    <integer name="com_vk_sdk_AppId">6818562</integer>
+    <string name="main_album">https://pu.vk.com/c849032/upload.php?act=do_add&amp;mid=9646367&amp;aid=259853164&amp;gid=176685160&amp;hash=2eaee5e2b48bbeb5d8d36a1d7cdc7df4&amp;rhash=156111a7d57f2a450cd1640c8476fc7c&amp;swfupload=1&amp;api=1</string>
+    <string name="second_album">https://pu.vk.com/c852228/upload.php?act=do_add&amp;mid=9646367&amp;aid=259938156&amp;gid=176685160&amp;hash=d15ede34b65b12fb437ba5dd9bd4bb07&amp;rhash=2acc614c625de743effb8a05a226678a&amp;swfupload=1&amp;api=1</string>
+
+    <!--Строки из ok.sdk-->
+
+
+    <string name="no_application_data">Отсутствует id или публичный ключ приложения</string>
+    <string name="no_valid_token">Нет действующего токена</string>
+    <string name="api_method_cant_be_empty">Метод api не может быть пустым или null</string>
+    <string name="friend_uids_cant_be_empty">friend uids не может быть пустым или null</string>
+    <string name="no_ok_application_installed">Необходимо наличии приложения Одноклассники для проведения SSO авторизации.</string>
+    <string name="retry">Повторить</string>
+    <string name="cancel">Отмена</string>
+    <string name="authorization_canceled">Авторизация была отменена</string>
+    <string name="posting_canceled">Постинг был отменен</string>
+    <string name="invite_canceled">Приглашение друзей отменено</string>
+    <string name="suggest_canceled">Рекомендация друзьям отменена</string>
+    <string name="error_connect">Не удалось подключиться к серверу</string>
+    <string name="error_failed_ssl_handshake">Не удалось установить SSL соединение</string>
+    <string name="error_host_lookup">Сервер недоступен</string>
+    <string name="error_timeout">Время ожидания сервера истекло</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_ssl_date_invalid">Не удалось установить SSL соединение. Возможно, установлена неправильная дата</string>
+    <string name="error_ssl_expired">Не удалось установить SSL соединение. Сертификат истек</string>
+    <string name="error_ssl_id_mismatch">Не удалось установить SSL соединение. Имя хоста не совпадает</string>
+    <string name="error_ssl_not_yet_valid">Не удалось установить SSL соединение. Возможно, установлена неправильная дата</string>
+    <string name="error_ssl_untrusted">Не удалось установить SSL соединение. CA не является доверенным</string>
+
+
+    <!--Строки приложения-->
+
+    <string name="post_text">Введи описание для поста</string>
+    <string name="hashtags">Добавить хэштэги</string>
+    <string name="choose_photo_main">Выбери одну или несколько фотографий для загрузки в основной альбом</string>
+    <string name="choose_photo_main_button">Выбрать фото для основного альбома</string>
+    <string name="choose_photo_second">Выбери (если необходимо) одну или несколько фотографий для загрузки в альбом \"до\"</string>
+    <string name="choose_photo_second_button">Выбрать фото для альбома \"до\"</string>
+    <string name="choose_social">Выбери соцсеть для публикации фото \"до\"</string>
+    <string name="cb_ok">Одноклассники</string>
+    <string name="cb_insta">Instagram</string>
+    <string name="bt_post">Опубликовать</string>
+
+</resources>

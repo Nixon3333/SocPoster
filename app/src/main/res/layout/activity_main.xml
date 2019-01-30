@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvPostText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/post_text" />
+
+    <EditText
+        android:id="@+id/etPostText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvPostText"
+        android:scrollbars="vertical" />
+
+    <Button
+        android:layout_marginHorizontal="8dp"
+        android:id="@+id/btHashtag"
+        android:layout_below="@id/etPostText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hashtags"
+        android:layout_centerHorizontal="true"
+        android:onClick="onBtChooseClick"/>
+
+    <LinearLayout
+        android:id="@+id/imageAfterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btHashtag"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/photo1"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <ImageView
+            android:id="@+id/photo2"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <ImageView
+            android:id="@+id/photo3"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+
+        <ImageView
+            android:id="@+id/photo4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/photo5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tvAfter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageAfterLayout"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/choose_photo_main" />
+
+    <Button
+        android:id="@+id/btChooseAfterImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAfter"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onBtChooseClick"
+        android:text="@string/choose_photo_main_button" />
+
+    <LinearLayout
+        android:id="@+id/imageBeforeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btChooseAfterImage"
+        android:layout_margin="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/photoBefore1"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+
+        <ImageView
+            android:id="@+id/photoBefore2"
+            android:layout_width="75dp"
+            android:layout_height="75dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBefore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageBeforeLayout"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/choose_photo_second" />
+
+    <Button
+        android:id="@+id/btChooseBeforeImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBefore"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="onBtChooseClick"
+        android:text="@string/choose_photo_second_button" />
+
+    <LinearLayout
+        android:layout_margin="8dp"
+        android:id="@+id/layoutTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btChooseBeforeImage"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_social" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/layoutTV"
+        android:id="@+id/layoutCB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:layout_marginHorizontal="8dp"
+            android:id="@+id/cbOK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_ok" />
+
+        <CheckBox
+            android:layout_marginHorizontal="8dp"
+            android:id="@+id/cbInsta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_insta" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutCB"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:onClick="onBtChooseClick"
+        android:text="@string/bt_post" />
+
+
+</RelativeLayout>
