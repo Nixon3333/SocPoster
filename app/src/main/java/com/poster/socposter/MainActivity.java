@@ -72,6 +72,9 @@ public class MainActivity extends AppCompatActivity {
     private VKInitialize vkActivity;
     private OKInitialize okInitialize;
 
+    private ClipboardManager clipboard;
+    private ClipData clip;
+
 
     protected static String postText = "";
 
@@ -186,8 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Пост опубликован в ОК", Toast.LENGTH_LONG).show();
                 okInitialize.getUploadUrl(pathToImagesAfterList);
 
-                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("postText", etPostText.getText().toString());
+                clip = ClipData.newPlainText("postText", etPostText.getText().toString());
                 clipboard.setPrimaryClip(clip);
 
                 if (!cbInsta.isChecked() & pathToImagesAfterList.size() == 1)
@@ -203,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
                                            @NonNull int[] grantResults) {
         if (requestCode == PERMISSION_REQUEST_CODE && grantResults.length == 2) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //showExtDirFilesCount();
+
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -218,6 +220,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent AfterIntent = new Intent(getApplicationContext(), PickImageActivity.class);
                 AfterIntent.putExtra(PickImageActivity.KEY_LIMIT_MAX_IMAGE, 5);
                 AfterIntent.putExtra(PickImageActivity.KEY_LIMIT_MIN_IMAGE, 1);
+                if (pathToImagesBeforeList != null)
+                    pathToImagesAfterList.clear();
                 startActivityForResult(AfterIntent, PickImageActivity.PICKER_REQUEST_CODE);
                 break;
 
@@ -226,6 +230,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent BeforeIntent = new Intent(getApplicationContext(), PickImageActivity.class);
                 BeforeIntent.putExtra(PickImageActivity.KEY_LIMIT_MAX_IMAGE, 5);
                 BeforeIntent.putExtra(PickImageActivity.KEY_LIMIT_MIN_IMAGE, 1);
+                if (pathToImagesBeforeList != null)
+                    pathToImagesBeforeList.clear();
                 startActivityForResult(BeforeIntent, PickImageActivity.PICKER_REQUEST_CODE);
                 break;
 
@@ -298,8 +304,8 @@ public class MainActivity extends AppCompatActivity {
                             if (pathToImagesAfterList.size() == 1) {
                                 okInitialize.getUploadUrl(pathToImagesAfterList);
 
-                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                                ClipData clip = ClipData.newPlainText("postText", etPostText.getText().toString());
+                                clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                clip = ClipData.newPlainText("postText", etPostText.getText().toString());
                                 clipboard.setPrimaryClip(clip);
 
                                 if (!cbInsta.isChecked())
@@ -391,5 +397,15 @@ public class MainActivity extends AppCompatActivity {
         if (launchIntent != null) {
             startActivity(launchIntent);//null pointer check in case package name was not found
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        etPostText.setText("");
+        if (clipboard == null)
+            clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        clip = ClipData.newPlainText("postText", "");
+        clipboard.setPrimaryClip(clip);
+        super.onDestroy();
     }
 }
