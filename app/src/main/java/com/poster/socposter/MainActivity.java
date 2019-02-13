@@ -189,9 +189,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Пост опубликован в ОК", Toast.LENGTH_LONG).show();
                 okInitialize.getUploadUrl(pathToImagesAfterList);
 
-                clip = ClipData.newPlainText("postText", etPostText.getText().toString());
-                clipboard.setPrimaryClip(clip);
-
                 if (!cbInsta.isChecked() & pathToImagesAfterList.size() == 1)
                     createInstagramIntent("image/*", pathToImagesAfterList.get(0));
                 else
@@ -255,13 +252,15 @@ public class MainActivity extends AppCompatActivity {
                                 pathToImagesAfterList, pathToImagesBeforeList);
                         if (cbOK.isChecked()) {
                             okInitialize.getUploadUrlWithPost(true, pathToImagesAfterList, pathToImagesBeforeList);
-
+                            clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                            clip = ClipData.newPlainText("postText", etPostText.getText().toString());
+                            clipboard.setPrimaryClip(clip);
                         } else {
                             if (pathToImagesAfterList.size() == 1) {
                                 okInitialize.getUploadUrl(pathToImagesAfterList);
 
-                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                                ClipData clip = ClipData.newPlainText("postText", etPostText.getText().toString());
+                                clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                                clip = ClipData.newPlainText("postText", etPostText.getText().toString());
                                 clipboard.setPrimaryClip(clip);
 
                                 if (!cbInsta.isChecked())
